@@ -1,0 +1,113 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@color/white"
+                style="@style/TestFragmentStyle"
+                tools:context="com.joeyturczak.drivingreference.ui.TestFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:id="@+id/question_number"
+        android:gravity="center_horizontal"
+        android:paddingLeft="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/question_statement"
+        android:paddingTop="16dp"
+        android:textSize="18sp"
+        android:paddingLeft="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_below="@id/question_number"
+        android:layout_toLeftOf="@id/previous_button"
+        android:layout_toStartOf="@id/previous_button"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"/>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/question_statement"
+        android:isScrollContainer="true"
+        android:paddingLeft="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/previous_button"
+        android:layout_toStartOf="@id/previous_button"
+        android:layout_above="@id/space">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioGroup">
+
+        </RadioGroup>
+
+    </ScrollView>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/previous_button"
+        android:contentDescription="@string/previous_button_content_description"
+        android:src="@drawable/ic_arrow_back_black_24dp"
+        android:background="@drawable/rounded_button_disabled"
+        android:elevation="6dp"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        style="@style/TestButtonStyle"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/check_button"
+        android:contentDescription="@string/check_button_content_description"
+        android:src="@drawable/ic_check_black_24dp"
+        android:background="@drawable/rounded_button_disabled"
+        android:elevation="6dp"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        style="@style/TestButtonStyle"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/next_button"
+        android:contentDescription="@string/next_button_content_description"
+        android:src="@drawable/ic_arrow_forward_black_24dp"
+        android:background="@drawable/rounded_button_disabled"
+        android:elevation="6dp"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        style="@style/TestButtonStyle"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/space"/>
+
+    <android.support.v4.widget.Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/space"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

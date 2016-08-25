@@ -1,0 +1,1504 @@
+{
+  "manuals": [
+    {
+      "location": "Alabama",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.alea.gov/Documents/Manuals/DriverLicenseManual.pdf",
+      "displayName": "AL Driver Manual"
+    },
+    {
+      "location": "Alabama",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.alea.gov/Documents/Manuals/MotorCycleManual.pdf",
+      "displayName": "AL Motorcycle Operator Manual"
+    },
+    {
+      "location": "Alabama",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.alea.gov/Documents/Manuals/CDLManual.pdf",
+      "displayName": "AL CDL Manual"
+    },
+    {
+      "location": "Alabama",
+      "language": "English",
+      "type": "Road_Test",
+      "url": "http://www.alea.gov/Documents/Documents/Road_Test_Study_Guide.pdf",
+      "displayName": "AL Road Test Study Guide"
+    },
+
+
+
+    {
+      "location": "Alaska",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://doa.alaska.gov/dmv/dlmanual/dlman.pdf",
+      "displayName": "AK Driver Manual"
+    },
+    {
+      "location": "Alaska",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://doa.alaska.gov/dmv/dlmanual/mcman.pdf",
+      "displayName": "AK Motorcycle Operator Manual"
+    },
+    {
+      "location": "Alaska",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://doa.alaska.gov/dmv/dlmanual/cdlmanual.pdf",
+      "displayName": "AK CDL Manual"
+    },
+
+
+
+    {
+      "location": "Arizona",
+      "language": "English",
+      "type": "Driver",
+      "url": "https://www.azdot.gov/docs/default-source/mvd-forms-pubs/99-0117.pdf?sfvrsn=0",
+      "displayName": "AZ Driver Manual"
+    },
+    {
+      "location": "Arizona",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "https://www.azdot.gov/docs/default-source/mvd-forms-pubs/99-0129.pdf?sfvrsn=0",
+      "displayName": "AZ Motorcycle Operator Manual"
+    },
+    {
+      "location": "Arizona",
+      "language": "English",
+      "type": "Commercial",
+      "url": "https://www.azdot.gov/docs/default-source/mvd-forms-pubs/40-7802.pdf?sfvrsn=6",
+      "displayName": "AZ CDL Manual"
+    },
+
+
+
+    {
+      "location": "Arkansas",
+      "language": "English",
+      "type": "Driver",
+      "url": "https://static.ark.org/eeuploads/asp/dl_study_guide_02292016.pdf",
+      "displayName": "AR Driver Manual"
+    },
+    {
+      "location": "Arkansas",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "https://static.ark.org/eeuploads/asp/motorcycle_endor_sg_072015.pdf",
+      "displayName": "AR Motorcycle Operator Manual"
+    },
+    {
+      "location": "Arkansas",
+      "language": "English",
+      "type": "Commercial",
+      "url": "https://static.ark.org/eeuploads/asp/cdl_study_guide_06262015.pdf",
+      "displayName": "AR CDL Manual"
+    },
+
+
+
+    {
+      "location": "California",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://dmv.ca.gov/web/eng_pdf/dl600.pdf",
+      "displayName": "CA Driver Handbook"
+    },
+    {
+      "location": "California",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "https://www.dmv.ca.gov/portal/wcm/connect/af13374c-aa57-4f2b-9ac9-aa3fdc419cc9/dl665.pdf?MOD=AJPERES",
+      "displayName": "CA Motorcycle Handbook"
+    },
+    {
+      "location": "California",
+      "language": "English",
+      "type": "Commercial",
+      "url": "https://www.dmv.ca.gov/portal/wcm/connect/42c566ef-31ac-4df2-a8ed-480619084886/comlhdbk.pdf?MOD=AJPERES",
+      "displayName": "CA CDL Handbook"
+    },
+    {
+      "location": "California",
+      "language": "English",
+      "type": "Senior",
+      "url": "https://www.dmv.ca.gov/portal/wcm/connect/8a431ac8-535b-4783-b006-a6c6cf58ef18/dl625senior.pdf?MOD=AJPERES",
+      "displayName": "CA Senior Guide for Safe Driving"
+    },
+    {
+      "location": "California",
+      "language": "English",
+      "type": "Supplemental",
+      "url": "https://www.dmv.ca.gov/portal/wcm/connect/ad477e32-6469-4c65-84f9-9d7a1aeded8b/dl956.pdf?MOD=AJPERES",
+      "displayName": "CA Supplemental Driving Performance Evaluation"
+    },
+    {
+      "location": "California",
+      "language": "English",
+      "type": "Teen",
+      "url": "https://www.dmv.ca.gov/portal/wcm/connect/b615c5c3-5a73-4e7b-b571-9850032730be/dl603.pdf?MOD=AJPERES",
+      "displayName": "CA Parent-Teen Training Guide"
+    },
+    {
+      "location": "California",
+      "language": "English",
+      "type": "Trailer",
+      "url": "https://www.dmv.ca.gov/portal/wcm/connect/28423ba0-bba6-4347-9e21-db274e970772/dl648.pdf?MOD=AJPERES",
+      "displayName": "CA RV and Trailers Handbook"
+    },
+
+
+
+    {
+      "location": "Colorado",
+      "language": "English",
+      "type": "Driver",
+      "url": "https://www.colorado.gov/pacific/sites/default/files/DR2337.pdf",
+      "displayName": "CO Driver Manual"
+    },
+    {
+      "location": "Colorado",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "https://www.colorado.gov/pacific/sites/default/files/DR2336.pdf",
+      "displayName": "CO Motorcycle Operator Manual"
+    },
+    {
+      "location": "Colorado",
+      "language": "English",
+      "type": "Commercial",
+      "url": "https://www.colorado.gov/pacific/sites/default/files/DR2251.pdf",
+      "displayName": "CO CDL Manual"
+    },
+
+
+
+    {
+      "location": "Connecticut",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.ct.gov/dmv/lib/dmv/20/29/r12eng.pdf",
+      "displayName": "CT Driver Manual"
+    },
+    {
+      "location": "Connecticut",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.ct.gov/dmv/lib/dmv/20/29/cycman.pdf",
+      "displayName": "CT Motorcycle Operator Manual"
+    },
+    {
+      "location": "Connecticut",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.ct.gov/dmv/lib/dmv/20/29/cdl_manual_for_test_on_or_after_5-3-2016.pdf",
+      "displayName": "CT CDL Manual"
+    },
+    {
+      "location": "Connecticut",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://www.ct.gov/dmv/lib/dmv/20/29/Howto.pdf",
+      "displayName": "CT Parent-Teen Training Guide"
+    },
+
+
+
+    {
+      "location": "Delaware",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.dmv.de.gov/forms/driver_serv_forms/pdfs/dr_frm_manual.pdf?092515",
+      "displayName": "DE Driver Manual"
+    },
+    {
+      "location": "Delaware",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.dmv.de.gov/forms/driver_serv_forms/pdfs/dr_frm_motorcycle_updated.pdf?020613",
+      "displayName": "DE Motorcycle Operator Manual"
+    },
+    {
+      "location": "Delaware",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.dmv.de.gov/forms/driver_serv_forms/pdfs/cdl_manual.pdf?120815",
+      "displayName": "DE CDL Manual"
+    },
+    {
+      "location": "Delaware",
+      "language": "English",
+      "type": "Senior",
+      "url": "http://www.dmv.de.gov/services/driver_services/senior/pdf/DE_Senior_Driver_Manual.pdf",
+      "displayName": "DE Senior Driver Manual"
+    },
+    {
+      "location": "Delaware",
+      "language": "English",
+      "type": "Farm",
+      "url": "http://www.dmv.de.gov/forms/driver_serv_forms/pdfs/farm_manual.pdf",
+      "displayName": "DE Farm Manual"
+    },
+    {
+      "location": "Delaware",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://www.dmv.de.gov/forms/driver_serv_forms/pdfs/ParentsSupervisedDrivingProgram_2016.pdf",
+      "displayName": "DE Parent's Supervised Driving Program"
+    },
+
+
+
+    {
+      "location": "District_of_Columbia",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://dmv.dc.gov/sites/default/files/dc/sites/dmv/publication/attachments/DC%20Driver%20Manual_April%202015.pdf",
+      "displayName": "DC Driver Manual"
+    },
+    {
+      "location": "District_of_Columbia",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://dmv.dc.gov/sites/default/files/dc/sites/dmv/publication/attachments/mom.pdf",
+      "displayName": "DC Motorcycle Operator Manual"
+    },
+    {
+      "location": "District_of_Columbia",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://dmv.dc.gov/sites/default/files/dc/sites/dmv/publication/attachments/2005%20CDL%20DRIVER%20MANUAL%20FINAL_Apr%2014%202015.pdf",
+      "displayName": "DC CDL Manual"
+    },
+    {
+      "location": "District_of_Columbia",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://dmv.dc.gov/sites/default/files/dc/sites/dmv/publication/attachments/ParentTeenDriver.pdf",
+      "displayName": "DC Parent Teen Driver Guide"
+    },
+
+
+
+    {
+      "location": "Florida",
+      "language": "English",
+      "type": "Driver",
+      "url": "https://www.flhsmv.gov/handbooks/EnglishDriverHandbook.pdf",
+      "displayName": "FL Driver Manual"
+    },
+    {
+      "location": "Florida",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "https://www.flhsmv.gov/handbooks/EnglishMotorcycleHandbook.pdf",
+      "displayName": "FL Motorcycle Operator Manual"
+    },
+    {
+      "location": "Florida",
+      "language": "English",
+      "type": "Commercial",
+      "url": "https://www.flhsmv.gov/handbooks/EnglishCDLHandbook.pdf",
+      "displayName": "FL CDL Manual"
+    },
+    {
+      "location": "Florida",
+      "language": "English",
+      "type": "Teen",
+      "url": "https://www.flhsmv.gov/teens/booklets/FLDriversGuide_09.pdf",
+      "displayName": "FL Parent and Teen Driver Guide"
+    },
+
+
+
+    {
+      "location": "Georgia",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.eregulations.com/wp-content/uploads/2015/06/15GADM_LR-3.pdf",
+      "displayName": "GA Driver Manual"
+    },
+    {
+      "location": "Georgia",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.eregulations.com/wp-content/uploads/2015/06/15GAMM-LR.pdf",
+      "displayName": "GA Motorcycle Operator Manual"
+    },
+    {
+      "location": "Georgia",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.eregulations.com/wp-content/uploads/2015/06/15GACM_LR.pdf",
+      "displayName": "GA CDL Manual"
+    },
+    {
+      "location": "Georgia",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://www.eregulations.com/wp-content/uploads/2015/12/16GAPT_LR.pdf",
+      "displayName": "GA Parent/Teen Driving Guide"
+    },
+
+
+
+    {
+      "location": "Hawaii",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://hidot.hawaii.gov/highways/files/2015/11/mvso-HawaiiDrivers-Manual09.2015.pdf",
+      "displayName": "HI Driver Manual"
+    },
+    {
+      "location": "Hawaii",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://hidot.hawaii.gov/highways/files/2013/01/mvso-Motorcycle-Operator-Manual.pdf",
+      "displayName": "HI Motorcycle Operator Manual"
+    },
+    {
+      "location": "Hawaii",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://hidot.hawaii.gov/highways/files/2013/01/mvso-CDL-Manual.pdf",
+      "displayName": "HI CDL Manual"
+    },
+
+
+
+    {
+      "location": "Idaho",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.itd.idaho.gov/dmv/DriverServices/documents/driver_manual.pdf",
+      "displayName": "ID Driver Manual"
+    },
+    {
+      "location": "Idaho",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.itd.idaho.gov/dmv/DriverServices/documents/motorcycle_manual.pdf",
+      "displayName": "ID Motorcycle Operator Manual"
+    },
+    {
+      "location": "Idaho",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.itd.idaho.gov/dmv/DriverServices/documents/cdl_manual.pdf",
+      "displayName": "ID CDL Manual"
+    },
+
+
+
+    {
+      "location": "Illinois",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.cyberdriveillinois.com/publications/pdf_publications/dsd_a112.pdf",
+      "displayName": "IL Driver Manual"
+    },
+    {
+      "location": "Illinois",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.cyberdriveillinois.com/publications/pdf_publications/dsd_x140.pdf",
+      "displayName": "IL Motorcycle Operator Manual"
+    },
+    {
+      "location": "Illinois",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.cyberdriveillinois.com/publications/pdf_publications/dsd_cdl10.pdf",
+      "displayName": "IL CDL Manual"
+    },
+    {
+      "location": "Illinois",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://www.cyberdriveillinois.com/publications/pdf_publications/dsd_a217.pdf",
+      "displayName": "IL Parent-Teen Driving Guide"
+    },
+
+
+
+    {
+      "location": "Indiana",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.wccsonline.com/cchs/academics/drivers_education/forms/Drivers_Manual.pdf",
+      "displayName": "IN Driver Manual"
+    },
+    {
+      "location": "Indiana",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.in.gov/bmv/files/Motorcycle_Operators_Manual.pdf",
+      "displayName": "IN Motorcycle Operator Manual"
+    },
+    {
+      "location": "Indiana",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.in.gov/bmv/files/CDL_Manual.pdf",
+      "displayName": "IN CDL Manual"
+    },
+
+
+
+    {
+      "location": "Iowa",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.iowadot.gov/mvd/driverslicense/dlmanual/dlmanual.pdf",
+      "displayName": "IA Driver Manual"
+    },
+    {
+      "location": "Iowa",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.iowadot.gov/mvd/resources/mcmanual.pdf",
+      "displayName": "IA Motorcycle Operator Manual"
+    },
+    {
+      "location": "Iowa",
+      "language": "English",
+      "type": "Commercial",
+      "url": "https://www.fmcsa.dot.gov/sites/fmcsa.dot.gov/files/docs/2005%20CDL%20Driver%20Manual%20-July%202014%20-%20FINAL.pdf",
+      "displayName": "IA CDL Manual"
+    },
+
+
+
+    {
+      "location": "Kansas",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.ksrevenue.org/pdf/dlhb.pdf",
+      "displayName": "KS Driver Manual"
+    },
+    {
+      "location": "Kansas",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.ksrevenue.org/pdf/mchdbk.pdf",
+      "displayName": "KS Motorcycle Operator Manual"
+    },
+    {
+      "location": "Kansas",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.ksrevenue.org/pdf/cdlhandbook.pdf",
+      "displayName": "KS CDL Manual"
+    },
+    {
+      "location": "Kansas",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://www.theparentssuperviseddrivingprogram.com/downloads/guidebooks/KS_TheParentsSupervisedDrivingProgram.pdf",
+      "displayName": "KS Parent's Supervised Driving Program"
+    },
+
+
+
+    {
+      "location": "Kentucky",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.kentuckystatepolice.org/pdf/2012_ky_drivers_manual.pdf",
+      "displayName": "KY Driver Manual"
+    },
+    {
+      "location": "Kentucky",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.kentuckystatepolice.org/pdf/motorcycle_rev_03_13_12_op.pdf",
+      "displayName": "KY Motorcycle Operator Manual"
+    },
+    {
+      "location": "Kentucky",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.kentuckystatepolice.org/pdf/Kentucky_CDL_Manual_2015.pdf",
+      "displayName": "KY CDL Manual"
+    },
+    {
+      "location": "Kentucky",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://transportation.ky.gov/Driver-Licensing/Documents/Parent%20Guide%20-%20Teaching%20Your%20Teen%20Driving%20Habits%20for%20Life.pdf",
+      "displayName": "KY Graduated Driver's License Guide"
+    },
+
+
+
+    {
+      "location": "Louisiana",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://dpsweb.dps.louisiana.gov/DPSForms.nsf/8bad5589175b8981862575F20048ee65/5402fbe0178e092686257c1a005ff1cb/$FILE/Class%20D%20&%20E%20Driver's%20Guide.pdf",
+      "displayName": "LA Driver Manual"
+    },
+    {
+      "location": "Louisiana",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://dpsweb.dps.louisiana.gov/DPSForms.nsf/8bad5589175b8981862575F20048ee65/67f85667abe6af8d8625740c006c3431/$FILE/Motorcycle%20Manual%202012%2012th%20Edition.pdf",
+      "displayName": "LA Motorcycle Operator Manual"
+    },
+    {
+      "location": "Louisiana",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://dpsweb.dps.louisiana.gov/DPSForms.nsf/8bad5589175b8981862575F20048ee65/b49427def852192a862579a5004826d9/$FILE/CDL%20Driver%20Manual%20-July%202014%20r%200416.pdf",
+      "displayName": "LA CDL Manual"
+    },
+
+
+
+    {
+      "location": "Maine",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.maine.gov/sos/bmv/licenses/motoristhandbook.pdf",
+      "displayName": "ME Driver Manual"
+    },
+    {
+      "location": "Maine",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.maine.gov/sos/bmv/licenses/motorcyclemanual.pdf",
+      "displayName": "ME Motorcycle Operator Manual"
+    },
+    {
+      "location": "Maine",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.maine.gov/sos/bmv/licenses/cdlmanual.pdf",
+      "displayName": "ME CDL Manual"
+    },
+    {
+      "location": "Maine",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://www.maine.gov/sos/bmv/licenses/SupervisedDrivingProgram_ME_2013.pdf",
+      "displayName": "ME Parent's Supervised Driving Program"
+    },
+
+
+
+    {
+      "location": "Maryland",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.mva.maryland.gov/_resources/docs/DL-002.pdf",
+      "displayName": "MD Driver Manual"
+    },
+    {
+      "location": "Maryland",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.mva.maryland.gov/safety/_docs/DL-001.pdf",
+      "displayName": "MD Motorcycle Operator Manual"
+    },
+    {
+      "location": "Maryland",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.mva.maryland.gov/_resources/docs/DL-151.pdf",
+      "displayName": "MD CDL Manual"
+    },
+    {
+      "location": "Maryland",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://www.mva.maryland.gov/_resources/docs/RD-006.pdf",
+      "displayName": "MD Rookie Driver Practice Guide"
+    },
+
+
+
+    {
+      "location": "Massachusetts",
+      "language": "English",
+      "type": "Driver",
+      "url": "https://www.massrmv.com/rmv/dmanual/Drivers_Manual.pdf",
+      "displayName": "MA Driver Manual"
+    },
+    {
+      "location": "Massachusetts",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "https://www.massrmv.com/rmv/mcmanual/MotorcycleManual.pdf",
+      "displayName": "MA Motorcycle Operator Manual"
+    },
+    {
+      "location": "Massachusetts",
+      "language": "English",
+      "type": "Commercial",
+      "url": "https://www.massrmv.com/rmv/cdlmanual/CDL_Manual_2005_rev_July_2014.pdf",
+      "displayName": "MA CDL Manual"
+    },
+    {
+      "location": "Massachusetts",
+      "language": "English",
+      "type": "School",
+      "url": "https://www.massrmv.com/rmv/7dmanual/7D_Manual.pdf",
+      "displayName": "MA Guide to School Pupil Transport Vehicles"
+    },
+
+
+
+    {
+      "location": "Michigan",
+      "language": "English",
+      "type": "Driver",
+      "url": "https://www.michigan.gov/documents/wedmk_16312_7.pdf",
+      "displayName": "MI Driver Manual"
+    },
+    {
+      "location": "Michigan",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "https://www.michigan.gov/documents/moopman_16311_7.pdf",
+      "displayName": "MI Motorcycle Operator Manual"
+    },
+    {
+      "location": "Michigan",
+      "language": "English",
+      "type": "Commercial",
+      "url": "https://www.michigan.gov/documents/cdlmanul_16090_7.pdf",
+      "displayName": "MI CDL Manual"
+    },
+    {
+      "location": "Michigan",
+      "language": "English",
+      "type": "Senior",
+      "url": "http://www.michigan.gov/documents/mdot/MDOT_OlderDriverGuide_455323_7.pdf",
+      "displayName": "MI Guide for Aging Drivers"
+    },
+    {
+      "location": "Michigan",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://www.michigan.gov/documents/gdl_parent_16316_7.pdf",
+      "displayName": "MI Graduated Driver License Guide"
+    },
+    {
+      "location": "Michigan",
+      "language": "English",
+      "type": "Road_Test",
+      "url": "http://www.michigan.gov/documents/ROAD_SKILLS_TEST_STUDY_GUIDE_05-02_21935_7.pdf",
+      "displayName": "MI Driving Skills Test Study Guide"
+    },
+
+
+
+    {
+      "location": "Minnesota",
+      "language": "English",
+      "type": "Driver",
+      "url": "https://dps.mn.gov/divisions/dvs/forms-documents/Documents/Minnesota_Drivers_Manual.pdf",
+      "displayName": "MN Driver Manual"
+    },
+    {
+      "location": "Minnesota",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "https://dps.mn.gov/divisions/dvs/forms-documents/Documents/MotorcycleManual.pdf",
+      "displayName": "MN Motorcycle Operator Manual"
+    },
+    {
+      "location": "Minnesota",
+      "language": "English",
+      "type": "Commercial",
+      "url": "https://dps.mn.gov/divisions/dvs/forms-documents/Documents/CDLManual.pdf",
+      "displayName": "MN CDL Manual"
+    },
+    {
+      "location": "Minnesota",
+      "language": "English",
+      "type": "Teen",
+      "url": "https://dps.mn.gov/divisions/ots/educational-materials/Documents/Teens-Behind-the-Wheel-Brochure.pdf",
+      "displayName": "MN Teens Behind the Wheel"
+    },
+
+
+
+    {
+      "location": "Mississippi",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.dps.state.ms.us/wp-content/uploads/2012/06/Driver-License-Manual-Jan-2012.pdf",
+      "displayName": "MS Driver Manual"
+    },
+    {
+      "location": "Mississippi",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.dps.state.ms.us/wp-content/uploads/2011/11/Motorcycle-2011.pdf",
+      "displayName": "MS Motorcycle Operator Manual"
+    },
+    {
+      "location": "Mississippi",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.dps.state.ms.us/wp-content/uploads/2012/07/CDL-Drivers-Manual.pdf",
+      "displayName": "MS CDL Manual"
+    },
+
+
+
+    {
+      "location": "Missouri",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://dor.mo.gov/forms/Driver_Guide.pdf",
+      "displayName": "MO Driver Manual"
+    },
+    {
+      "location": "Missouri",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://dor.mo.gov/forms/2332.pdf",
+      "displayName": "MO Motorcycle Operator Manual"
+    },
+    {
+      "location": "Missouri",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://dor.mo.gov/forms/CDL%20Manual.pdf",
+      "displayName": "MO CDL Manual"
+    },
+
+
+
+    {
+      "location": "Montana",
+      "language": "English",
+      "type": "Driver",
+      "url": "https://media.dojmt.gov/wp-content/uploads/MT-Driver-Manual-Jan-2016_Print.pdf",
+      "displayName": "MT Driver Manual"
+    },
+    {
+      "location": "Montana",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "https://media.dojmt.gov/wp-content/uploads/Montana-MVD-Motorcycle-Manual-January-13-2016.pdf",
+      "displayName": "MT Motorcycle Operator Manual"
+    },
+    {
+      "location": "Montana",
+      "language": "English",
+      "type": "Commercial",
+      "url": "https://media.dojmt.gov/wp-content/uploads/Montana-CDL-Manual-Dec-2015.pdf",
+      "displayName": "MT CDL Manual"
+    },
+    {
+      "location": "Montana",
+      "language": "English",
+      "type": "Teen",
+      "url": "https://media.dojmt.gov/wp-content/uploads/Parents-Guide-to-Teen-Driving_v1.pdf",
+      "displayName": "MT Parent's Guide to Teen Driving"
+    },
+
+
+
+    {
+      "location": "Nebraska",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.dmv.nebraska.gov/examining/pdf/engdrivermanual.pdf",
+      "displayName": "NE Driver Manual"
+    },
+    {
+      "location": "Nebraska",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.dmv.nebraska.gov/examining/pdf/mcmanual.pdf",
+      "displayName": "NE Motorcycle Operator Manual"
+    },
+    {
+      "location": "Nebraska",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.dmv.nebraska.gov/examining/pdf/2014cdlmanualpdfforwebsite.pdf",
+      "displayName": "NE CDL Manual"
+    },
+    {
+      "location": "Nebraska",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://www.dmv.nebraska.gov/examining/pdf/ParentsSupervisedDrivingProgram.pdf",
+      "displayName": "NE Parent's Supervised Driving Program"
+    },
+    {
+      "location": "Nebraska",
+      "language": "English",
+      "type": "School",
+      "url": "https://www.education.ne.gov/FOS/OrgServices/PupilTrans/Downloads/PupilTransGuide2012.pdf",
+      "displayName": "NE Pupil Transportation Guide"
+    },
+
+
+
+    {
+      "location": "Nevada",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.dmvnv.com/pdfforms/dlbook.pdf",
+      "displayName": "NV Driver Manual"
+    },
+    {
+      "location": "Nevada",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.dmvnv.com/pdfforms/dlbookmotorcycle.pdf",
+      "displayName": "NV Motorcycle Operator Manual"
+    },
+    {
+      "location": "Nevada",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.dmvnv.com/pdfforms/dlbookcomm.pdf",
+      "displayName": "NV CDL Manual"
+    },
+    {
+      "location": "Nevada",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://www.dmvnv.com/pdfforms/logbook.pdf",
+      "displayName": "NV Beginning Driver Training Guide"
+    },
+    {
+      "location": "Nevada",
+      "language": "English",
+      "type": "Trailer",
+      "url": "http://www.dmvnv.com/pdfforms/dlbookabj.pdf",
+      "displayName": "NV Class A, B, J Endorsement Study Guide"
+    },
+
+
+
+    {
+      "location": "New_Hampshire",
+      "language": "English",
+      "type": "Driver",
+      "url": "https://www.nh.gov/safety/divisions/dmv/forms/documents/nhdm.pdf",
+      "displayName": "NH Driver Manual"
+    },
+    {
+      "location": "New_Hampshire",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "https://www.nh.gov/safety/divisions/dmv/forms/documents/motooperman.pdf",
+      "displayName": "NH Motorcycle Operator Manual"
+    },
+    {
+      "location": "New_Hampshire",
+      "language": "English",
+      "type": "Commercial",
+      "url": "https://www.nh.gov/safety/divisions/dmv/forms/documents/nhcdm.pdf",
+      "displayName": "NH CDL Manual"
+    },
+
+
+
+    {
+      "location": "New_Jersey",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.state.nj.us/mvc/pdf/Manuals/drivermanual.pdf",
+      "displayName": "NJ Driver Manual"
+    },
+    {
+      "location": "New_Jersey",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.state.nj.us/mvc/pdf/About/mcm996.pdf",
+      "displayName": "NJ Motorcycle Operator Manual"
+    },
+    {
+      "location": "New_Jersey",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.state.nj.us/mvc/pdf/Commercial/CDL_Manual.pdf",
+      "displayName": "NJ CDL Manual"
+    },
+
+
+
+    {
+      "location": "New_Mexico",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://realfile.tax.newmexico.gov/English%20Driver%27s%20Manual.pdf",
+      "displayName": "NM Driver Manual"
+    },
+    {
+      "location": "New_Mexico",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "https://www.msf-usa.org/downloads/mom_v16_color_hi_res.pdf",
+      "displayName": "NM Motorcycle Operator Manual"
+    },
+    {
+      "location": "New_Mexico",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://realfile.tax.newmexico.gov/2005%20CDL%20Driver%20Manual%20-July%202013%20-%20FINAL%20-%20(New%20Mexico%20Specific).pdf",
+      "displayName": "NM CDL Manual"
+    },
+
+
+
+    {
+      "location": "New_York",
+      "language": "English",
+      "type": "Driver",
+      "url": "https://dmv.ny.gov/brochure/mv21.pdf",
+      "displayName": "NY Driver Manual"
+    },
+    {
+      "location": "New_York",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "https://dmv.ny.gov/brochure/mv21-mc.pdf",
+      "displayName": "NY Motorcycle Operator Manual"
+    },
+    {
+      "location": "New_York",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://driving-tests.org/wp-content/uploads/2015/06/NY_CDL_June2015.pdf",
+      "displayName": "NY CDL Manual"
+    },
+
+
+
+    {
+      "location": "North_Carolina",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.ncdot.gov/download/dmv/handbooks_ncdl_english.pdf",
+      "displayName": "NC Driver Manual"
+    },
+    {
+      "location": "North_Carolina",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.ncdot.gov/download/dmv/handbooks_MotoHandbook.pdf",
+      "displayName": "NC Motorcycle Operator Manual"
+    },
+    {
+      "location": "North_Carolina",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.ncdot.gov/download/dmv/handbooks_CDLmanual.pdf",
+      "displayName": "NC CDL Manual"
+    },
+    {
+      "location": "North_Carolina",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://www.theparentssuperviseddrivingprogram.com/downloads/nc/NorthCarolina_TheParentsSupervisedDrivingProgram.pdf",
+      "displayName": "NC Parent's Supervised Driving Program"
+    },
+
+
+
+    {
+      "location": "North_Dakota",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.dot.nd.gov/divisions/driverslicense/docs/noncommercial-dl-manual-class-d.pdf",
+      "displayName": "ND Driver Manual"
+    },
+    {
+      "location": "North_Dakota",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.dot.nd.gov/divisions/driverslicense/docs/motocycle-operators-manual.pdf",
+      "displayName": "ND Motorcycle Operator Manual"
+    },
+    {
+      "location": "North_Dakota",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.dot.nd.gov/divisions/driverslicense/docs/class_c1.pdf",
+      "displayName": "ND CDL Manual"
+    },
+    {
+      "location": "North_Dakota",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://www.dot.nd.gov/manuals/safety/SupervisedDrivingProgram_ND_2015_Spreads.pdf",
+      "displayName": "ND Parent's Supervised Driving Program"
+    },
+
+
+
+    {
+      "location": "Ohio",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://publicsafety.ohio.gov/links/hsy7607.pdf",
+      "displayName": "OH Driver Manual"
+    },
+    {
+      "location": "Ohio",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://publicsafety.ohio.gov/links/mop0001.pdf",
+      "displayName": "OH Motorcycle Operator Manual"
+    },
+    {
+      "location": "Ohio",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://publicsafety.ohio.gov/links/hsy7605.pdf",
+      "displayName": "OH CDL Manual"
+    },
+
+
+
+    {
+      "location": "Oklahoma",
+      "language": "English",
+      "type": "Driver",
+      "url": "https://www.dps.state.ok.us/dls/pub/ODM.pdf",
+      "displayName": "OK Driver Manual"
+    },
+    {
+      "location": "Oklahoma",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "https://www.dps.state.ok.us/dls/pub/MOM.pdf",
+      "displayName": "OK Motorcycle Operator Manual"
+    },
+    {
+      "location": "Oklahoma",
+      "language": "English",
+      "type": "Commercial",
+      "url": "https://www.dps.state.ok.us/dls/pub/CMVDM.pdf",
+      "displayName": "OK CDL Manual"
+    },
+
+
+    {
+      "location": "Oregon",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.odot.state.or.us/forms/dmv/37.pdf",
+      "displayName": "OR Driver Manual"
+    },
+    {
+      "location": "Oregon",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.odot.state.or.us/forms/dmv/6367.pdf",
+      "displayName": "OR Motorcycle Operator Manual"
+    },
+    {
+      "location": "Oregon",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.odot.state.or.us/forms/dmv/36.pdf",
+      "displayName": "OR CDL Manual"
+    },
+    {
+      "location": "Oregon",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://www.odot.state.or.us/forms/dmv/7190.pdf#parent_teen",
+      "displayName": "OR Parent Guide to Teen Driving"
+    },
+
+
+
+    {
+      "location": "Pennsylvania",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.dot.state.pa.us/Public/DVSPubsForms/BDL/BDL%20Manuals/Manuals/PA%20Drivers%20Manual%20By%20Chapter/English/PUB%2095.pdf",
+      "displayName": "PA Driver Manual"
+    },
+    {
+      "location": "Pennsylvania",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.dot.state.pa.us/Public/DVSPubsForms/BDL/BDL%20Manuals/Manuals/Motorcycle%20Operators%20Manual/English/PUB%20147.pdf",
+      "displayName": "PA Motorcycle Operator Manual"
+    },
+    {
+      "location": "Pennsylvania",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.dot.state.pa.us/Public/DVSPubsForms/BDL/BDL%20Manuals/Manuals/Commercial%20Drivers%20Manual/Comm%20Manual%20English/PUB%20223.pdf",
+      "displayName": "PA CDL Manual"
+    },
+    {
+      "location": "Pennsylvania",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://www.dot.state.pa.us/public/dvspubsforms/BDL/BDL%20Publications/Pub%20385a.pdf",
+      "displayName": "PA Parent's Supervised Driving Program"
+    },
+
+
+
+    {
+      "location": "Rhode_Island",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.dmv.ri.gov/documents/manuals/Driver_Manual_FINAL.pdf",
+      "displayName": "RI Driver Manual"
+    },
+    {
+      "location": "Rhode_Island",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "https://www.msf-usa.org/downloads/mom_v16_color_hi_res.pdf",
+      "displayName": "RI Motorcycle Operator Manual"
+    },
+    {
+      "location": "Rhode_Island",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.dmv.ri.gov/documents/manuals/CDL_Manual.pdf",
+      "displayName": "RI CDL Manual"
+    },
+    {
+      "location": "Rhode_Island",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://www.theparentssuperviseddrivingprogram.com/downloads/SupervisedDrivingProgram_RI_2012.pdf",
+      "displayName": "RI Parent's Supervised Driving Program"
+    },
+
+
+
+    {
+      "location": "South_Carolina",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.scdmvonline.com/DMVNew/Forms/driver%20manual.pdf",
+      "displayName": "SC Driver Manual"
+    },
+    {
+      "location": "South_Carolina",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.scdmvonline.com/DMVNew/Forms/MTC%20Safety%20Officer%20Manual.pdf",
+      "displayName": "SC Motorcycle Operator Manual"
+    },
+    {
+      "location": "South_Carolina",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.scdmvonline.com/DMVNew/Forms/cdl%20manual.pdf",
+      "displayName": "SC CDL Manual"
+    },
+
+
+
+    {
+      "location": "South_Dakota",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://dps.sd.gov/licensing/driver_licensing/documents/SouthDakotaDriverManual_000.pdf",
+      "displayName": "SD Driver Manual"
+    },
+    {
+      "location": "South_Dakota",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://dps.sd.gov/licensing/driver_licensing/documents/Motorcycle_Operator_Manual_July_2015.pdf",
+      "displayName": "SD Motorcycle Operator Manual"
+    },
+    {
+      "location": "South_Dakota",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://dps.sd.gov/licensing/driver_licensing/documents/2005_CDL_Driver_Manual_5-15-15.pdf",
+      "displayName": "SD CDL Manual"
+    },
+    {
+      "location": "South_Dakota",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://www.roadreadyteens.org/RRParentsGuidev3bb_Pages.PDF",
+      "displayName": "SD Parent's Guide to Teen Driving"
+    },
+
+
+
+    {
+      "location": "Tennessee",
+      "language": "English",
+      "type": "Driver",
+      "url": "https://www.tn.gov/assets/entities/safety/attachments/DL_Manual.pdf",
+      "displayName": "TN Driver Manual"
+    },
+    {
+      "location": "Tennessee",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "https://www.tn.gov/assets/entities/safety/attachments/MotorcycleManual.pdf",
+      "displayName": "TN Motorcycle Operator Manual"
+    },
+    {
+      "location": "Tennessee",
+      "language": "English",
+      "type": "Commercial",
+      "url": "https://www.tn.gov/assets/entities/safety/attachments/CDLManual.pdf",
+      "displayName": "TN CDL Manual"
+    },
+
+
+
+    {
+      "location": "Texas",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.dps.texas.gov/internetforms/Forms/DL-7.pdf",
+      "displayName": "TX Driver Manual"
+    },
+    {
+      "location": "Texas",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.dps.texas.gov/internetforms/Forms/DL-8.pdf",
+      "displayName": "TX Motorcycle Operator Manual"
+    },
+    {
+      "location": "Texas",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.dps.texas.gov/internetforms/Forms/DL-7C.pdf",
+      "displayName": "TX CDL Manual"
+    },
+    {
+      "location": "Texas",
+      "language": "English",
+      "type": "Road_Test",
+      "url": "https://www.dps.texas.gov/internetforms/Forms/DL-60.pdf",
+      "displayName": "TX How to Prepare for Driving Test"
+    },
+
+
+
+    {
+      "location": "Utah",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://dld.utah.gov/wp-content/uploads/sites/17/2015/01/Driver-Handbook-2015.pdf",
+      "displayName": "UT Driver Manual"
+    },
+    {
+      "location": "Utah",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://dld.utah.gov/wp-content/uploads/sites/17/2015/01/Motorcycle-Handbook-2010.pdf",
+      "displayName": "UT Motorcycle Operator Manual"
+    },
+    {
+      "location": "Utah",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://dld.utah.gov/wp-content/uploads/sites/17/2015/01/CDL-Driver-Handbook-REV-2015.pdf",
+      "displayName": "UT CDL Manual"
+    },
+
+
+
+    {
+      "location": "Vermont",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://dmv.vermont.gov/sites/dmv/files/pdf/DMV-VN007-License_Manual.pdf",
+      "displayName": "VT Driver Manual"
+    },
+    {
+      "location": "Vermont",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://dmv.vermont.gov/sites/dmv/files/pdf/TAVN07a%202015%20-%20Complete.pdf",
+      "displayName": "VT Motorcycle Operator Manual"
+    },
+    {
+      "location": "Vermont",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://dmv.vermont.gov/sites/dmv/files/pdf/DMV-VN111-CDL_Driver_Manual.pdf",
+      "displayName": "VT CDL Manual"
+    },
+    {
+      "location": "Vermont",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://dmv.vermont.gov/sites/dmv/files/pdf/DMV-VN025-Graduated%20Driver_License_Law_and_Teen_Driving_Safety_Tips.pdf",
+      "displayName": "VT Parent's Guide to Teen Driving"
+    },
+
+
+
+    {
+      "location": "Virginia",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.dmv.state.va.us/webdoc/pdf/dmv39.pdf",
+      "displayName": "VA Driver Manual"
+    },
+    {
+      "location": "Virginia",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.dmv.state.va.us/webdoc/pdf/dmv2.pdf",
+      "displayName": "VA Motorcycle Operator Manual"
+    },
+    {
+      "location": "Virginia",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.dmv.state.va.us/webdoc/pdf/dmv60a.pdf",
+      "displayName": "VA CDL Manual"
+    },
+    {
+      "location": "Virginia",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://www.dmv.state.va.us/webdoc/pdf/dmv16.pdf",
+      "displayName": "VA Parents in the Driver's Seat"
+    },
+
+
+
+    {
+      "location": "Washington",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.dol.wa.gov/driverslicense/docs/driverguide-en.pdf",
+      "displayName": "WA Driver Manual"
+    },
+    {
+      "location": "Washington",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.dol.wa.gov/driverslicense/docs/motomanual.pdf",
+      "displayName": "WA Motorcycle Operator Manual"
+    },
+    {
+      "location": "Washington",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.dol.wa.gov/driverslicense/docs/cdlguide.pdf",
+      "displayName": "WA CDL Manual"
+    },
+    {
+      "location": "Washington",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://www.dol.wa.gov/driverslicense/docs/parentguide.pdf",
+      "displayName": "WA Parent's Supervised Driving Program"
+    },
+
+
+
+    {
+      "location": "West_Virginia",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.transportation.wv.gov/DMV/DMVFormSearch/Drivers_Licensing_Handbook_web.pdf",
+      "displayName": "WV Driver's Licensing Handbook"
+    },
+    {
+      "location": "West_Virginia",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.transportation.wv.gov/DMV/DMVFormSearch/Motorcycle%20Operator%20Manual.pdf",
+      "displayName": "WV Motorcycle Operator Manual"
+    },
+    {
+      "location": "West_Virginia",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.transportation.wv.gov/DMV/DMVFormSearch/WV-CDL-Manual.pdf",
+      "displayName": "WV CDL Manual"
+    },
+
+
+
+    {
+      "location": "Wisconsin",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://wisconsindot.gov/Documents/dmv/shared/bds126-motorists-handbook.pdf",
+      "displayName": "WI Driver Manual"
+    },
+    {
+      "location": "Wisconsin",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://wisconsindot.gov/Documents/dmv/shared/bds110-mc-manual.pdf",
+      "displayName": "WI Motorcycle Operator Manual"
+    },
+    {
+      "location": "Wisconsin",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://wisconsindot.gov/Documents/dmv/shared/bds356-cdl-manual.pdf",
+      "displayName": "WI CDL Manual"
+    },
+    {
+      "location": "Wisconsin",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://wisconsindot.gov/Documents/dmv/shared/psdp-guidebook.pdf",
+      "displayName": "WI Parent's Supervised Driving Program"
+    },
+    {
+      "location": "Wisconsin",
+      "language": "English",
+      "type": "Senior",
+      "url": "http://wisconsindot.gov/Documents/dmv/shared/bds345.pdf",
+      "displayName": "WI Older Driver Workbook"
+    },
+
+
+
+    {
+      "location": "Wyoming",
+      "language": "English",
+      "type": "Driver",
+      "url": "http://www.dot.state.wy.us/files/live/sites/wydot/files/shared/Driver_Services/Help%20Documents%20and%20Manuals/2014%20Class%20C%20Driver%20License%20Manual.pdf",
+      "displayName": "WY Driver Manual"
+    },
+    {
+      "location": "Wyoming",
+      "language": "English",
+      "type": "Motorcycle",
+      "url": "http://www.dot.state.wy.us/files/live/sites/wydot/files/shared/Driver_Services/Help%20Documents%20and%20Manuals/2015%20motorcycle%20manual%20for%20Web.pdf",
+      "displayName": "WY Motorcycle Operator Manual"
+    },
+    {
+      "location": "Wyoming",
+      "language": "English",
+      "type": "Commercial",
+      "url": "http://www.dot.state.wy.us/files/live/sites/wydot/files/shared/Driver_Services/Help%20Documents%20and%20Manuals/2015%20CDL%20Manual.pdf",
+      "displayName": "WY CDL Manual"
+    },
+    {
+      "location": "Wyoming",
+      "language": "English",
+      "type": "Teen",
+      "url": "http://www.dot.state.wy.us/files/live/sites/wydot/files/shared/Driver_Services/Help%20Documents%20and%20Manuals/p008_2015PSDG-Wyoming%20FINAL%20for%20web.pdf",
+      "displayName": "WY Parent's Supervised Driving Program"
+    }
+  ]
+}

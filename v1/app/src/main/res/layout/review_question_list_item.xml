@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2016 Joey Turczak -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:minHeight="?attr/listPreferredItemHeight"
+              android:gravity="center_vertical"
+              android:layout_width="match_parent"
+              android:focusable="true"
+              android:paddingTop="16dp"
+              android:paddingRight="16dp"
+              android:paddingEnd="16dp"
+              android:paddingStart="16dp"
+              android:paddingLeft="16dp"
+              android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/question_statement"
+        android:textColor="@color/black"
+        android:paddingBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your answer:"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="0dp"
+            android:paddingLeft="0dp"
+            android:paddingEnd="@dimen/manual_list_item_padding"
+            android:paddingRight="@dimen/manual_list_item_padding"
+            android:contentDescription="@string/driver_manual_icon_content_description"
+            android:id="@+id/selected_answer_icon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/selected_answer_text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/manual_list_item_text_size"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Correct answer:"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="0dp"
+            android:paddingLeft="0dp"
+            android:paddingEnd="@dimen/manual_list_item_padding"
+            android:paddingRight="@dimen/manual_list_item_padding"
+            android:contentDescription="@string/driver_manual_icon_content_description"
+            android:id="@+id/correct_answer_icon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/correct_answer_text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/manual_list_item_text_size"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/darker_gray"/>
+
+</LinearLayout>

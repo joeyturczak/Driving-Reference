@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DR Debug</string>
+    <string name="package_name" translatable="false">com.tophatcatsoftware.drivingreference.debug</string>
+</resources>
