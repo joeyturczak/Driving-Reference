@@ -3,6 +3,7 @@ package com.tophatcatsoftware.drivingreference;
 import android.app.Application;
 import android.content.Intent;
 
+import com.google.firebase.database.FirebaseDatabase;
 import com.tophatcatsoftware.drivingreference.data.DrivingContract;
 import com.tophatcatsoftware.drivingreference.services.UpdateDataIntentService;
 import com.tophatcatsoftware.drivingreference.utils.Utility;
@@ -17,7 +18,8 @@ public class DrivingReferenceApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        addQuestionsToDb();
+//        addQuestionsToDb();
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
     }
 
     private void addQuestionsToDb() {
