@@ -1,0 +1,41 @@
+{
+  "manuals": {
+    "alabama": {
+      "english": {
+        "alendr": {
+          "type": "driver",
+          "url": "",
+          "displayName": ""
+        },
+        "alenmo": {
+          "type": "motorcycle",
+          "url": "",
+          "displayName": ""
+        }
+      }
+    }
+  },
+
+  "types": {
+    "english": {
+      "alabama": {
+        "driver": true,
+        "motorcycle": true,
+        "commercial": true,
+        "road_test": true
+      }
+    }
+  },
+
+  "languages": {
+    "alabama": {
+      "english": true
+    }
+  },
+
+  "users": {
+    "user1": {
+
+    }
+  }
+}

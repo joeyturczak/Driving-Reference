@@ -9,13 +9,33 @@ import android.os.Parcelable;
  *
  * Stores driver manual information in a Parcelable implementation
  */
-public class Manual extends BaseManual implements Parcelable {
+public class Manual implements Parcelable {
 
-    public Manual(String location, String type, String language, String url, String displayName, int downloaded, int lastPage) {
-        super(location, type, language, url, displayName, downloaded, lastPage);
+    public static final int NOT_DOWNLOADED = 0;
+    public static final int DOWNLOADED = 1;
+
+    protected long id;
+    protected String location;
+    protected String type;
+    protected String language;
+    protected String url;
+    protected String displayName;
+    protected int downloaded;
+    protected int lastPage;
+
+    public Manual(long id, String location, String type, String language, String url, String displayName, int downloaded, int lastPage) {
+        this.id = id;
+        this.location = location;
+        this.type = type;
+        this.language = language;
+        this.url = url;
+        this.displayName = displayName;
+        this.downloaded = downloaded;
+        this.lastPage = lastPage;
     }
 
     protected Manual(Parcel in) {
+        id = in.readLong();
         location = in.readString();
         type = in.readString();
         language = in.readString();
@@ -44,6 +64,7 @@ public class Manual extends BaseManual implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(id);
         dest.writeString(location);
         dest.writeString(type);
         dest.writeString(language);
@@ -51,5 +72,69 @@ public class Manual extends BaseManual implements Parcelable {
         dest.writeString(displayName);
         dest.writeInt(downloaded);
         dest.writeInt(lastPage);
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    public int getDownloaded() {
+        return downloaded;
+    }
+
+    public void setDownloaded(int downloaded) {
+        this.downloaded = downloaded;
+    }
+
+    public int getLastPage() {
+        return lastPage;
+    }
+
+    public void setLastPage(int lastPage) {
+        this.lastPage = lastPage;
     }
 }
