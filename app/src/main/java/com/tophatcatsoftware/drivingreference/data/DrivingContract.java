@@ -33,12 +33,12 @@ public class DrivingContract {
 
         public static final String COLUMN_BACKEND_ID = "backend_id";
 
-        public static final String COLUMN_LOCATION = "location";
-        public static final String COLUMN_TYPE = "type";
-        public static final String COLUMN_LANGUAGE = "language";
-        public static final String COLUMN_URL = "url";
-        public static final String COLUMN_DISPLAY_NAME = "display_name";
-        public static final String COLUMN_LAST_UPDATED = "last_updated";
+//        public static final String COLUMN_LOCATION = "location";
+//        public static final String COLUMN_TYPE = "type";
+//        public static final String COLUMN_LANGUAGE = "language";
+//        public static final String COLUMN_URL = "url";
+//        public static final String COLUMN_DISPLAY_NAME = "display_name";
+//        public static final String COLUMN_LAST_UPDATED = "last_updated";
         public static final String COLUMN_DOWNLOADED = "downloaded";
         public static final String COLUMN_LAST_PAGE = "last_page";
 
