@@ -8,6 +8,9 @@ import com.tophatcatsoftware.drivingreference.data.DrivingContract;
 import com.tophatcatsoftware.drivingreference.services.UpdateDataIntentService;
 import com.tophatcatsoftware.drivingreference.utils.Utility;
 
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
+
 
 /**
  * Copyright (C) 2016 Joey Turczak
@@ -20,6 +23,9 @@ public class DrivingReferenceApplication extends Application {
 
         addQuestionsToDb();
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+
+        RealmConfiguration config = new RealmConfiguration.Builder(this).name("driving-reference.realm").build();
+        Realm.setDefaultConfiguration(config);
     }
 
     private void addQuestionsToDb() {
