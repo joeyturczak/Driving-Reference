@@ -107,7 +107,7 @@
       "location": "California",
       "language": "English",
       "type": "Driver",
-      "url": "http://dmv.ca.gov/web/eng_pdf/dl600.pdf",
+      "url": "https://dmv.ca.gov/web/eng_pdf/dl600.pdf",
       "displayName": "CA Driver Handbook"
     },
     {
@@ -321,21 +321,21 @@
       "location": "Georgia",
       "language": "English",
       "type": "Driver",
-      "url": "http://www.eregulations.com/wp-content/uploads/2015/06/15GADM_LR-3.pdf",
+      "url": "http://www.eregulations.com/wp-content/uploads/2016/06/16GADM_LR3.pdf",
       "displayName": "GA Driver Manual"
     },
     {
       "location": "Georgia",
       "language": "English",
       "type": "Motorcycle",
-      "url": "http://www.eregulations.com/wp-content/uploads/2015/06/15GAMM-LR.pdf",
+      "url": "http://www.eregulations.com/wp-content/uploads/2016/06/16GAMM-Final-LR3.pdf",
       "displayName": "GA Motorcycle Operator Manual"
     },
     {
       "location": "Georgia",
       "language": "English",
       "type": "Commercial",
-      "url": "http://www.eregulations.com/wp-content/uploads/2015/06/15GACM_LR.pdf",
+      "url": "http://www.eregulations.com/wp-content/uploads/2016/06/16GACM_LR3.pdf",
       "displayName": "GA CDL Manual"
     },
     {
@@ -1359,28 +1359,28 @@
       "location": "Virginia",
       "language": "English",
       "type": "Driver",
-      "url": "http://www.dmv.state.va.us/webdoc/pdf/dmv39.pdf",
+      "url": "https://www.dmv.state.va.us/webdoc/pdf/dmv39.pdf",
       "displayName": "VA Driver Manual"
     },
     {
       "location": "Virginia",
       "language": "English",
       "type": "Motorcycle",
-      "url": "http://www.dmv.state.va.us/webdoc/pdf/dmv2.pdf",
+      "url": "https://www.dmv.state.va.us/webdoc/pdf/dmv2.pdf",
       "displayName": "VA Motorcycle Operator Manual"
     },
     {
       "location": "Virginia",
       "language": "English",
       "type": "Commercial",
-      "url": "http://www.dmv.state.va.us/webdoc/pdf/dmv60a.pdf",
+      "url": "https://www.dmv.state.va.us/webdoc/pdf/dmv60a.pdf",
       "displayName": "VA CDL Manual"
     },
     {
       "location": "Virginia",
       "language": "English",
       "type": "Teen",
-      "url": "http://www.dmv.state.va.us/webdoc/pdf/dmv16.pdf",
+      "url": "https://www.dmv.state.va.us/webdoc/pdf/dmv16.pdf",
       "displayName": "VA Parents in the Driver's Seat"
     },
 

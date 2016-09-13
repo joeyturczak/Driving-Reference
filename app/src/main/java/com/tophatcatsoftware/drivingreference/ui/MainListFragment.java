@@ -15,18 +15,23 @@ import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.tophatcatsoftware.drivingreference.R;
 import com.tophatcatsoftware.drivingreference.adapters.MainListAdapter;
 import com.tophatcatsoftware.drivingreference.data.DrivingContract;
-import com.tophatcatsoftware.drivingreference.models.Manual;
+import com.tophatcatsoftware.drivingreference.models.FbManual;
 import com.tophatcatsoftware.drivingreference.models.Test;
 import com.tophatcatsoftware.drivingreference.utils.LocationUtility;
-import com.tophatcatsoftware.drivingreference.utils.ManualUtility;
 import com.tophatcatsoftware.drivingreference.utils.TestUtility;
 import com.tophatcatsoftware.drivingreferencelib.DrivingValues;
 
@@ -39,7 +44,7 @@ import java.util.List;
 public class MainListFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>,
         SharedPreferences.OnSharedPreferenceChangeListener {
 
-    public static final int LOADER_MANUAL = 1;
+//    public static final int LOADER_MANUAL = 1;
     public static final int LOADER_TEST = 2;
 
     private MainListAdapter mMainListAdapter;
@@ -47,13 +52,17 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
 
     private boolean mIsLargeLayout;
 
-    private Cursor mManualsCursor;
+//    private Cursor mManualsCursor;
     private Cursor mTestsCursor;
 
     private List<Integer> mViewTypes;
     private List<Object> mData;
 
-    private Context mContext;
+    private List<FbManual> mManuals;
+
+//    private Context mContext;
+
+    private DatabaseReference mRef;
 
     public MainListFragment() {
         // Required empty public constructor
@@ -66,7 +75,8 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        getLoaderManager().initLoader(LOADER_MANUAL, null, this);
+//        getLoaderManager().initLoader(LOADER_MANUAL, null, this);
+        mManuals = new ArrayList<>();
         getLoaderManager().initLoader(LOADER_TEST, null, this);
     }
 
@@ -74,9 +84,9 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
      * Restarts the loader if a different location was selected
      */
     public void onLocationChanged() {
-        mManualsCursor = null;
+//        mManualsCursor = null;
         mTestsCursor = null;
-        getLoaderManager().restartLoader(LOADER_MANUAL, null, this);
+//        getLoaderManager().restartLoader(LOADER_MANUAL, null, this);
         getLoaderManager().restartLoader(LOADER_TEST, null, this);
 
         if(mIsLargeLayout) {
@@ -84,6 +94,7 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
         }
 
         updateWidget();
+        updateFirebaseRef();
     }
 
     @Override
@@ -99,6 +110,9 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
         super.onResume();
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
         sp.registerOnSharedPreferenceChangeListener(this);
+
+        updateFirebaseRef();
+
 //        mManualsCursor = null;
 //        mTestsCursor = null;
 //        getLoaderManager().restartLoader(LOADER_MANUAL, null, this);
@@ -116,7 +130,7 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mIsLargeLayout = getResources().getBoolean(R.bool.large_layout);
-        mContext = getContext();
+//        mContext = getContext();
     }
 
     @Override
@@ -164,8 +178,8 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
 //        mTestsCursor = null;
 
         switch (id) {
-            case LOADER_MANUAL:
-                return getManualsLoader();
+//            case LOADER_MANUAL:
+//                return getManualsLoader();
             case LOADER_TEST:
                 return getTestsLoader();
             default:
@@ -174,24 +188,24 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
 
     }
 
-    /**
-     * Returns a CursorLoader for Manuals database selection
-     */
-    private CursorLoader getManualsLoader() {
-        String location = LocationUtility.getLocationConfig(getContext());
-
-        String sortOrder = DrivingContract.DrivingManualEntry.COLUMN_TYPE + getString(R.string.sort_order_asc);
-
-        //Show only the items from the selected location
-        String selection = DrivingContract.DrivingManualEntry.COLUMN_LOCATION + " = '" + location + "'";
-
-        return new CursorLoader(getActivity(),
-                DrivingContract.DrivingManualEntry.CONTENT_URI,
-                null,
-                selection,
-                null,
-                sortOrder);
-    }
+//    /**
+//     * Returns a CursorLoader for Manuals database selection
+//     */
+//    private CursorLoader getManualsLoader() {
+//        String location = LocationUtility.getLocationConfig(getContext());
+//
+//        String sortOrder = DrivingContract.DrivingManualEntry.COLUMN_TYPE + getString(R.string.sort_order_asc);
+//
+//        //Show only the items from the selected location
+//        String selection = DrivingContract.DrivingManualEntry.COLUMN_LOCATION + " = '" + location + "'";
+//
+//        return new CursorLoader(getActivity(),
+//                DrivingContract.DrivingManualEntry.CONTENT_URI,
+//                null,
+//                selection,
+//                null,
+//                sortOrder);
+//    }
 
     /**
      * Returns a CursorLoader for Tests database selection
@@ -216,9 +230,9 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
 
         switch (loader.getId()) {
-            case LOADER_MANUAL:
-                mManualsCursor = data;
-                break;
+//            case LOADER_MANUAL:
+//                mManualsCursor = data;
+//                break;
             case LOADER_TEST:
                 mTestsCursor = data;
                 break;
@@ -226,7 +240,7 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
 
 //        if(mManualsCursor != null && mTestsCursor != null) {
             fillDataArrays();
-            mMainListAdapter.swapData(mViewTypes, mData);
+//            mMainListAdapter.swapData(mViewTypes, mData);
 
             if ( data.getCount() == 0 ) {
                 getActivity().supportStartPostponedEnterTransition();
@@ -268,7 +282,7 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
                 }
             }
 
-            boolean inProgress = TestUtility.getTestInProgress(mContext);
+            boolean inProgress = TestUtility.getTestInProgress(getContext());
 
             // Add test to continue if there is one
             if(inProgress) {
@@ -284,22 +298,22 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
 
             // Delete any tests in the database that shouldn't be there
             for(Test test : incompleteTests) {
-                TestUtility.removeTestFromDb(mContext, test);
+                TestUtility.removeTestFromDb(getContext(), test);
             }
         }
 
         // Add new tests
         // Add Driver Test
         mViewTypes.add(MainListAdapter.VIEW_TYPE_NEW_TEST);
-        mData.add(TestUtility.createNewTest(mContext, LocationUtility.getLocationConfig(mContext),
+        mData.add(TestUtility.createNewTest(getContext(), LocationUtility.getLocationConfig(getContext()),
                 DrivingValues.Type.Driver.toString(), DrivingValues.Language.English.toString()));
         // Add Motorcycle Test
         mViewTypes.add(MainListAdapter.VIEW_TYPE_NEW_TEST);
-        mData.add(TestUtility.createNewTest(mContext, LocationUtility.getLocationConfig(mContext),
+        mData.add(TestUtility.createNewTest(getContext(), LocationUtility.getLocationConfig(getContext()),
                 DrivingValues.Type.Motorcycle.toString(), DrivingValues.Language.English.toString()));
         // Add Commercial Test
         mViewTypes.add(MainListAdapter.VIEW_TYPE_NEW_TEST);
-        mData.add(TestUtility.createNewTest(mContext, LocationUtility.getLocationConfig(mContext),
+        mData.add(TestUtility.createNewTest(getContext(), LocationUtility.getLocationConfig(getContext()),
                 DrivingValues.Type.Commercial.toString(), DrivingValues.Language.English.toString()));
 
         if(testsForReview.size() > 0) {
@@ -309,22 +323,34 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
         }
 
         // Add manuals
-        if(mManualsCursor != null && mManualsCursor.moveToFirst()) {
+        if(mManuals.size() > 0) {
+            Log.d("Manual", "Add");
             mViewTypes.add(MainListAdapter.VIEW_TYPE_TITLE);
             mData.add(getString(R.string.title_driving_manuals));
-            do {
-                Manual manual = ManualUtility.getManualFromCursor(mManualsCursor);
-
+            for(FbManual manual : mManuals) {
+                Log.d("Manual", "Add2");
                 mViewTypes.add(MainListAdapter.VIEW_TYPE_MANUAL);
                 mData.add(manual);
-            } while(mManualsCursor.moveToNext());
+            }
         }
+//        if(mManualsCursor != null && mManualsCursor.moveToFirst()) {
+//            mViewTypes.add(MainListAdapter.VIEW_TYPE_TITLE);
+//            mData.add(getString(R.string.title_driving_manuals));
+//            do {
+//                Manual manual = ManualUtility.getManualFromCursor(mManualsCursor);
+//
+//                mViewTypes.add(MainListAdapter.VIEW_TYPE_MANUAL);
+//                mData.add(manual);
+//            } while(mManualsCursor.moveToNext());
+//        }
+
+        mMainListAdapter.swapData(mViewTypes, mData);
 
     }
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
-        mManualsCursor = null;
+//        mManualsCursor = null;
         mTestsCursor = null;
         mMainListAdapter.swapData(null, null);
     }
@@ -360,5 +386,44 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
         Intent dataUpdatedIntent = new Intent(AppWidgetManager.ACTION_APPWIDGET_UPDATE)
                 .setPackage(context.getPackageName());
         context.sendBroadcast(dataUpdatedIntent);
+    }
+
+    private void updateFirebaseRef() {
+        String location = LocationUtility.getLocationConfig(getContext());
+        String language = "English";
+        mRef = FirebaseDatabase.getInstance().getReference().child("manuals").child(location)
+                .child(language);
+        Log.d("update", location);
+
+        mManuals = new ArrayList<>();
+
+        mRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                mManuals.add(dataSnapshot.getValue(FbManual.class));
+                Log.d("Add", "add");
+                fillDataArrays();
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 }

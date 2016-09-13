@@ -130,7 +130,7 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
     private List<Manual> getAllDbManuals() {
         List<Manual> manuals = new ArrayList<>();
 
-        String sortOrder = DrivingContract.DrivingManualEntry.COLUMN_TYPE + getString(R.string.sort_order_asc);
+        String sortOrder = DrivingContract.DrivingManualEntry.COLUMN_BACKEND_ID + getString(R.string.sort_order_asc);
 
         ContentResolver contentResolver = getActivity().getContentResolver();
 

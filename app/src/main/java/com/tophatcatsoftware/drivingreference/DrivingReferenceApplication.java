@@ -18,7 +18,7 @@ public class DrivingReferenceApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-//        addQuestionsToDb();
+        addQuestionsToDb();
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
     }
 

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.tophatcatsoftware.drivingreference.R;
-import com.tophatcatsoftware.drivingreference.models.Manual;
+import com.tophatcatsoftware.drivingreference.models.FbManual;
 import com.tophatcatsoftware.drivingreference.models.Test;
 import com.tophatcatsoftware.drivingreference.utils.ItemChoiceManager;
 import com.tophatcatsoftware.drivingreference.utils.TestUtility;
@@ -126,6 +127,7 @@ public class MainListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         if(mData == null) {
             return 0;
         }
+        Log.d("ItemCount", String.valueOf(mData.size()));
         return mData.size();
     }
 
@@ -142,7 +144,9 @@ public class MainListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     private void bindManualView(RecyclerView.ViewHolder viewHolder, int position) {
 
-        Manual manual = (Manual) mData.get(position);
+//        Manual manual = (Manual) mData.get(position);
+        FbManual manual = (FbManual) mData.get(position);
+        Log.d("Manual", "BIND");
 
         String type = manual.getType();
         String displayName = manual.getDisplayName();
@@ -239,7 +243,7 @@ public class MainListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
             int adapterPosition = getAdapterPosition();
 
-            Manual manual = (Manual) mData.get(adapterPosition);
+            FbManual manual = (FbManual) mData.get(adapterPosition);
 
             mClickHandler.onClick(manual, this);
             if(mIsLargeLayout) {

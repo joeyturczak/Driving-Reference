@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:background="@color/colorAccent"
+              tools:context="com.tophatcatsoftware.drivingreference.ui.WelcomeFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:paddingTop="64dp"
+        android:paddingLeft="48dp"
+        android:paddingRight="48dp"
+        android:text="Welcome to TopHatCat Drivers Ed!"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="64dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:text="Please choose your state:"
+        />
+
+    <Spinner
+        android:id="@+id/location_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="48dp"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>

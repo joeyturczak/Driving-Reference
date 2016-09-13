@@ -2,15 +2,12 @@ package com.tophatcatsoftware.drivingreference.widget;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.os.Binder;
 import android.widget.AdapterView;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
 import com.tophatcatsoftware.drivingreference.R;
-import com.tophatcatsoftware.drivingreference.data.DrivingContract;
 import com.tophatcatsoftware.drivingreference.models.Manual;
-import com.tophatcatsoftware.drivingreference.utils.LocationUtility;
 import com.tophatcatsoftware.drivingreference.utils.ManualUtility;
 import com.tophatcatsoftware.drivingreference.utils.Utility;
 
@@ -42,23 +39,23 @@ public class DrivingWidgetRemoteViewsService extends RemoteViewsService {
 
             @Override
             public void onDataSetChanged() {
-                if (data != null) {
-                    data.close();
-                }
-                // This method is called by the app hosting the widget (e.g., the launcher)
-                // However, our ContentProvider is not exported so it doesn't have access to the
-                // data. Therefore we need to clear (and finally restore) the calling identity so
-                // that calls use our process and permission
-                final long identityToken = Binder.clearCallingIdentity();
-
-                String location = LocationUtility.getLocationConfig(DrivingWidgetRemoteViewsService.this);
-
-                String sortOrder = DrivingContract.DrivingManualEntry.COLUMN_TYPE + getString(R.string.sort_order_asc);
-                String selection = DrivingContract.DrivingManualEntry.COLUMN_LOCATION + " = '" + location + "'";
-
-                data = getContentResolver().query(DrivingContract.DrivingManualEntry.CONTENT_URI, null, selection, null, sortOrder);
-
-                Binder.restoreCallingIdentity(identityToken);
+//                if (data != null) {
+//                    data.close();
+//                }
+//                // This method is called by the app hosting the widget (e.g., the launcher)
+//                // However, our ContentProvider is not exported so it doesn't have access to the
+//                // data. Therefore we need to clear (and finally restore) the calling identity so
+//                // that calls use our process and permission
+//                final long identityToken = Binder.clearCallingIdentity();
+//
+//                String location = LocationUtility.getLocationConfig(DrivingWidgetRemoteViewsService.this);
+//
+//                String sortOrder = DrivingContract.DrivingManualEntry.COLUMN_TYPE + getString(R.string.sort_order_asc);
+//                String selection = DrivingContract.DrivingManualEntry.COLUMN_LOCATION + " = '" + location + "'";
+//
+//                data = getContentResolver().query(DrivingContract.DrivingManualEntry.CONTENT_URI, null, selection, null, sortOrder);
+//
+//                Binder.restoreCallingIdentity(identityToken);
             }
 
             @Override

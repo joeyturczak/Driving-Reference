@@ -1,41 +1,45 @@
 {
   "manuals": {
-    "alabama": {
-      "english": {
-        "alendr": {
-          "type": "driver",
-          "url": "",
-          "displayName": ""
+    "Alabama": {
+      "English": {
+        "AlabamaEnglishDriver": {
+          "type": "Driver",
+          "url": "http://www.alea.gov/Documents/Manuals/DriverLicenseManual.pdf",
+          "displayName": "AL Driver Manual"
         },
-        "alenmo": {
-          "type": "motorcycle",
-          "url": "",
-          "displayName": ""
+        "AlabamaEnglishMotorcycle": {
+          "type": "Motorcycle",
+          "url": "http://www.alea.gov/Documents/Manuals/MotorCycleManual.pdf",
+          "displayName": "AL Motorcycle Operator Manual"
+        },
+        "AlabamaEnglishCommercial": {
+          "type": "Commercial",
+          "url": "http://www.alea.gov/Documents/Manuals/CDLManual.pdf",
+          "displayName": "AL CDL Manual"
+        },
+        "AlabamaEnglishRoad_Test": {
+          "type": "Road_Test",
+          "url": "http://www.alea.gov/Documents/Documents/Road_Test_Study_Guide.pdf",
+          "displayName": "AL Road Test Study Guide"
         }
       }
     }
   },
 
   "types": {
-    "english": {
-      "alabama": {
-        "driver": true,
-        "motorcycle": true,
-        "commercial": true,
-        "road_test": true
+    "English": {
+      "Alabama": {
+        "Driver": true,
+        "Motorcycle": true,
+        "Commercial": true,
+        "Road_Test": true
       }
     }
   },
 
   "languages": {
-    "alabama": {
-      "english": true
-    }
-  },
-
-  "users": {
-    "user1": {
-
+    "Alabama": {
+      "English": true
     }
   }
 }

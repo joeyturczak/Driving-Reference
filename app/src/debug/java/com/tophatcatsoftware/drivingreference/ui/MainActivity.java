@@ -2,7 +2,10 @@ package com.tophatcatsoftware.drivingreference.ui;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
@@ -27,13 +30,12 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
+import com.google.firebase.auth.FirebaseAuth;
 import com.tophatcatsoftware.drivingreference.R;
 import com.tophatcatsoftware.drivingreference.adapters.LocationSpinnerAdapter;
 import com.tophatcatsoftware.drivingreference.adapters.MainListAdapter;
-import com.tophatcatsoftware.drivingreference.data.DrivingContract;
 import com.tophatcatsoftware.drivingreference.models.Manual;
 import com.tophatcatsoftware.drivingreference.models.Test;
-import com.tophatcatsoftware.drivingreference.services.UpdateDataIntentService;
 import com.tophatcatsoftware.drivingreference.utils.LocationUtility;
 import com.tophatcatsoftware.drivingreference.utils.TestUtility;
 import com.tophatcatsoftware.drivingreference.utils.Utility;
@@ -46,13 +48,16 @@ import java.util.List;
  * Copyright (C) 2016 Joey Turczak
  */
 public class MainActivity extends AppCompatActivity implements FragmentManager.OnBackStackChangedListener,
-        MainListFragment.OnItemSelectedListener, TestFragment.OnTestCompleteListener, ReviewFragment.OnTestSelectedListener {
+        MainListFragment.OnItemSelectedListener, TestFragment.OnTestCompleteListener,
+        ReviewFragment.OnTestSelectedListener, WelcomeFragment.OnWelcomeCompleted, FirebaseAuth.AuthStateListener {
 
     private static final String MENU_FRAGMENT_TAG = "MF";
     private static final String PDF_FRAGMENT_TAG = "PF";
     private static final String TEST_FRAGMENT_TAG = "TF";
     private static final String REVIEW_FRAGMENT_TAG = "RF";
     private static final String REVIEW_DETAIL_FRAGMENT_TAG = "RDF";
+    private static final String WELCOME_FRAGMENT_TAG = "WF";
+    private static final String LOGO_FRAGMENT_TAG = "LF";
 
     public static final int PDF_FRAGMENT = 0;
     public static final int TEST_FRAGMENT = 1;
@@ -81,6 +86,20 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
     private boolean mIsDbEmpty;
 
     private boolean mBackPressed = false;
+
+    private FirebaseAuth mFirebaseAuth;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mFirebaseAuth.addAuthStateListener(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mFirebaseAuth.removeAuthStateListener(this);
+    }
 
     @Override
     protected void onResume() {
@@ -120,6 +139,9 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
         setContentView(R.layout.activity_main);
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        mFirebaseAuth.signInAnonymously();
 
         mIsLargeLayout = getResources().getBoolean(R.bool.large_layout);
 
@@ -462,52 +484,58 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
 
     private void loadContent() {
 
-        mIsDbEmpty = Utility.isDbEmpty(this, DrivingContract.DrivingManualEntry.CONTENT_URI);
-        if(mIsDbEmpty) {
-            checkNetworkAndUpdate();
+//        mIsDbEmpty = Utility.isDbEmpty(this, DrivingContract.DrivingManualEntry.CONTENT_URI);
+//        if(mIsDbEmpty) {
+//            checkNetworkAndUpdate();
+//        } else {
+//            updateData();
+//        }
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean welcome = sharedPreferences.getBoolean("welcome", false);
+        if(welcome) {
+            addFragments();
         } else {
-            updateData();
-        }
-
-        addFragments();
-    }
-
-    /**
-     * Starts the intent service to check if there is new data
-     */
-    private void updateData() {
-        Intent intent = new Intent(this, UpdateDataIntentService.class);
-        intent.setAction(UpdateDataIntentService.ACTION_UPDATE_MANUALS);
-        intent.putExtra(getString(R.string.database_empty_intent_key), mIsDbEmpty);
-        startService(intent);
-    }
-
-    private void checkNetworkAndUpdate() {
-        if(Utility.isNetworkAvailable(this)) {
-            updateData();
-        } else {
-            showNetworkError();
+            startWelcomeFragment();
         }
     }
 
-    private void showNetworkError() {
-        AlertDialog alertDialog = new AlertDialog.Builder(this)
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .setTitle("No Network Connection")
-                .setMessage("This app requires a content download for some features to be enabled. " +
-                        "Please connect to the Internet and restart the app for full functionality")
-                .setNegativeButton("Retry", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        checkNetworkAndUpdate();
-                    }
-                })
-                .setPositiveButton("OK", null)
-                .setCancelable(false)
-                .create();
+//    /**
+//     * Starts the intent service to check if there is new data
+//     */
+//    private void updateData() {
+//        Intent intent = new Intent(this, UpdateDataIntentService.class);
+//        intent.setAction(UpdateDataIntentService.ACTION_UPDATE_MANUALS);
+//        intent.putExtra(getString(R.string.database_empty_intent_key), mIsDbEmpty);
+//        startService(intent);
+//    }
+//
+//    private void checkNetworkAndUpdate() {
+//        if(Utility.isNetworkAvailable(this)) {
+//            updateData();
+//        } else {
+//            showNetworkError();
+//        }
+//    }
 
-        alertDialog.show();
-    }
+//    private void showNetworkError() {
+//        AlertDialog alertDialog = new AlertDialog.Builder(this)
+//                .setIcon(android.R.drawable.ic_dialog_alert)
+//                .setTitle("No Network Connection")
+//                .setMessage("This app requires a content download for some features to be enabled. " +
+//                        "Please connect to the Internet and restart the app for full functionality")
+//                .setNegativeButton("Retry", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        checkNetworkAndUpdate();
+//                    }
+//                })
+//                .setPositiveButton("OK", null)
+//                .setCancelable(false)
+//                .create();
+//
+//        alertDialog.show();
+//    }
 
     private void addFragments() {
         addMainListFragment();
@@ -624,5 +652,41 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
                     .addToBackStack(null)
                     .commit();
         }
+    }
+
+    private void startWelcomeFragment() {
+        WelcomeFragment welcomeFragment = WelcomeFragment.newInstance();
+
+        if(mIsLargeLayout) {
+            getSupportFragmentManager().beginTransaction()
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .replace(R.id.detail_container, welcomeFragment, WELCOME_FRAGMENT_TAG)
+                    .commit();
+            getSupportFragmentManager().beginTransaction()
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .replace(R.id.main_container, LogoFragment.newInstance(), LOGO_FRAGMENT_TAG)
+                    .commit();
+        } else {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.main_container, welcomeFragment, WELCOME_FRAGMENT_TAG)
+                    .addToBackStack(null)
+                    .commit();
+        }
+    }
+
+    @Override
+    public void onWelcomeCompleted() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("welcome", false);
+        editor.apply();
+
+        getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        addFragments();
+    }
+
+    @Override
+    public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+
     }
 }
