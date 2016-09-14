@@ -29,7 +29,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.tophatcatsoftware.drivingreference.R;
 import com.tophatcatsoftware.drivingreference.adapters.MainListAdapter;
 import com.tophatcatsoftware.drivingreference.data.DrivingContract;
-import com.tophatcatsoftware.drivingreference.models.FbManual;
+import com.tophatcatsoftware.drivingreference.models.RealmManual;
 import com.tophatcatsoftware.drivingreference.models.Test;
 import com.tophatcatsoftware.drivingreference.utils.LocationUtility;
 import com.tophatcatsoftware.drivingreference.utils.TestUtility;
@@ -37,6 +37,8 @@ import com.tophatcatsoftware.drivingreferencelib.DrivingValues;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.realm.Realm;
 
 /**
  * Copyright (C) 2016 Joey Turczak
@@ -58,11 +60,40 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
     private List<Integer> mViewTypes;
     private List<Object> mData;
 
-    private List<FbManual> mManuals;
+    private List<RealmManual> mManuals;
 
 //    private Context mContext;
 
     private DatabaseReference mRef;
+
+    private Realm mRealm;
+
+    private ChildEventListener mManualListener = new ChildEventListener() {
+        @Override
+        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+        }
+
+        @Override
+        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+        }
+
+        @Override
+        public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+        }
+
+        @Override
+        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+        }
+
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
+
+        }
+    };
 
     public MainListFragment() {
         // Required empty public constructor
@@ -110,6 +141,7 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
         super.onResume();
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
         sp.registerOnSharedPreferenceChangeListener(this);
+        mRealm = Realm.getDefaultInstance();
 
         updateFirebaseRef();
 
@@ -124,6 +156,7 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
         super.onPause();
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
         sp.unregisterOnSharedPreferenceChangeListener(this);
+        mRealm.close();
     }
 
     @Override
@@ -327,7 +360,7 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
             Log.d("Manual", "Add");
             mViewTypes.add(MainListAdapter.VIEW_TYPE_TITLE);
             mData.add(getString(R.string.title_driving_manuals));
-            for(FbManual manual : mManuals) {
+            for(RealmManual manual : mManuals) {
                 Log.d("Manual", "Add2");
                 mViewTypes.add(MainListAdapter.VIEW_TYPE_MANUAL);
                 mData.add(manual);
@@ -400,7 +433,7 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
         mRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                mManuals.add(dataSnapshot.getValue(FbManual.class));
+                mManuals.add(dataSnapshot.getValue(RealmManual.class));
                 Log.d("Add", "add");
                 fillDataArrays();
             }

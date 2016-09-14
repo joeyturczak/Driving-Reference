@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.tophatcatsoftware.drivingreference.R;
-import com.tophatcatsoftware.drivingreference.models.FbManual;
+import com.tophatcatsoftware.drivingreference.models.RealmManual;
 import com.tophatcatsoftware.drivingreference.models.Test;
 import com.tophatcatsoftware.drivingreference.utils.ItemChoiceManager;
 import com.tophatcatsoftware.drivingreference.utils.TestUtility;
@@ -145,7 +145,7 @@ public class MainListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private void bindManualView(RecyclerView.ViewHolder viewHolder, int position) {
 
 //        Manual manual = (Manual) mData.get(position);
-        FbManual manual = (FbManual) mData.get(position);
+        RealmManual manual = (RealmManual) mData.get(position);
         Log.d("Manual", "BIND");
 
         String type = manual.getType();
@@ -243,7 +243,7 @@ public class MainListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
             int adapterPosition = getAdapterPosition();
 
-            FbManual manual = (FbManual) mData.get(adapterPosition);
+            RealmManual manual = (RealmManual) mData.get(adapterPosition);
 
             mClickHandler.onClick(manual, this);
             if(mIsLargeLayout) {
