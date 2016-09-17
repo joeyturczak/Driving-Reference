@@ -21,15 +21,6 @@ public class RealmManual extends RealmObject {
 
     }
 
-//    public RealmManual(String id, FbManual manual) {
-//        this.id = id;
-//        this.type = manual.getType();
-//        this.url = manual.getUrl();
-//        this.displayName = manual.getDisplayName();
-//        this.downloaded = false;
-//        this.lastPage = 0;
-//    }
-
     public String getId() {
         return id;
     }

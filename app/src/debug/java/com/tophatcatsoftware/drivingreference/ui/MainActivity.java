@@ -294,12 +294,12 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
 
         switch (fragmentId) {
             case PDF_FRAGMENT:
-                Manual manual = (Manual) object;
+                RealmManual manual = (RealmManual) object;
                 mTitle = manual.getDisplayName();
                 PDFFragment pdfFragment = PDFFragment.newInstance();
 
                 Bundle bundle = new Bundle();
-                bundle.putParcelable(getString(R.string.pdf_fragment_manual_key), manual);
+                bundle.putString(getString(R.string.pdf_fragment_manual_key), manual.getId());
 
                 pdfFragment.setArguments(bundle);
 
@@ -768,7 +768,7 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
             // EXISTS
         } else {
             // ADD TO REALM
-            mRealm.executeTransactionAsync(new Realm.Transaction() {
+            mRealm.executeTransaction(new Realm.Transaction() {
                 @Override
                 public void execute(Realm realm) {
                     manual.setDownloaded(false);

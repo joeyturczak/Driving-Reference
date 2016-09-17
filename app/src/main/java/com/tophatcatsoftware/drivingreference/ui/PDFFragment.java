@@ -19,6 +19,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.ShareActionProvider;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -36,14 +37,17 @@ import android.widget.Toast;
 
 import com.tophatcatsoftware.drivingreference.R;
 import com.tophatcatsoftware.drivingreference.adapters.PDFViewPagerAdapter;
-import com.tophatcatsoftware.drivingreference.models.Manual;
+import com.tophatcatsoftware.drivingreference.models.RealmManual;
 import com.tophatcatsoftware.drivingreference.utils.DownloadManualTask;
-import com.tophatcatsoftware.drivingreference.utils.ManualUtility;
 import com.tophatcatsoftware.drivingreference.utils.Utility;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.HttpURLConnection;
+
+import io.realm.Realm;
+import io.realm.RealmQuery;
+import io.realm.RealmResults;
 
 /**
  * Copyright (C) 2016 Joey Turczak
@@ -62,7 +66,7 @@ public class PDFFragment extends Fragment {
 
     private String mFileName;
 
-    private Manual mManual;
+    private RealmManual mManual;
 
     private int mCurrentPageNumber;
 
@@ -71,6 +75,8 @@ public class PDFFragment extends Fragment {
     private TextView mPlaceholderText;
 
     private Toast mToast;
+
+    private Realm mRealm;
 
     public static PDFFragment newInstance() {
         return new PDFFragment();
@@ -100,8 +106,9 @@ public class PDFFragment extends Fragment {
             }
             if(result.equals(DownloadManualTask.RESULT_SUCCESS)) {
                 showToast(getString(R.string.toast_download_complete));
-                mManual.setDownloaded(Manual.DOWNLOADED);
-                ManualUtility.setFileDownloaded(mContext, mManual.getId());
+                updateDownloaded(true);
+//                mManual.setDownloaded(true);
+//                ManualUtility.setFileDownloaded(mContext, mManual.getId());
                 try {
                     openPdf();
                 } catch (IOException e) {
@@ -121,15 +128,28 @@ public class PDFFragment extends Fragment {
 
         Bundle bundle = getArguments();
 
+        String id = "";
+
         if(bundle != null) {
-            mManual = bundle.getParcelable(getString(R.string.pdf_fragment_manual_key));
+            id = bundle.getString(getString(R.string.pdf_fragment_manual_key));
         }
 
         if(savedInstanceState != null) {
             Bundle savedBundle = savedInstanceState.getBundle(mContext.getString(R.string.pdf_fragment_bundle_key));
             if(savedBundle != null) {
-                mManual = savedBundle.getParcelable(getString(R.string.pdf_fragment_manual_key));
+                id = savedBundle.getString(getString(R.string.pdf_fragment_manual_key));
             }
+        }
+
+        mRealm = Realm.getDefaultInstance();
+
+        RealmQuery<RealmManual> query = mRealm.where(RealmManual.class)
+                .equalTo("id", id);
+        RealmResults<RealmManual> results = query.findAll();
+
+        if(results.size() > 0) {
+            mManual = results.get(0);
+            Log.d("Manual", mManual.getId());
         }
 
         mFileName = String.valueOf(mManual.getId()) + getString(R.string.pdf_file_extension);
@@ -166,6 +186,7 @@ public class PDFFragment extends Fragment {
         super.onPause();
         LocalBroadcastManager.getInstance(mContext).unregisterReceiver(mDownloadProgressReceiver);
         LocalBroadcastManager.getInstance(mContext).unregisterReceiver(mDownloadCompleteReceiver);
+        mRealm.close();
     }
 
     @Override
@@ -175,13 +196,14 @@ public class PDFFragment extends Fragment {
                 new IntentFilter(mContext.getString(R.string.download_progress_intent_filter)));
         LocalBroadcastManager.getInstance(mContext).registerReceiver(mDownloadCompleteReceiver,
                 new IntentFilter(mContext.getString(R.string.download_complete_intent_filter)));
+        mRealm = Realm.getDefaultInstance();
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         Bundle bundle = new Bundle();
-        bundle.putParcelable(getString(R.string.pdf_fragment_manual_key), mManual);
+        bundle.putString(getString(R.string.pdf_fragment_manual_key), mManual.getId());
         outState.putBundle(getString(R.string.pdf_fragment_bundle_key), bundle);
     }
 
@@ -213,7 +235,7 @@ public class PDFFragment extends Fragment {
      */
     private void initializePdfView() {
 
-        if(mManual.getDownloaded() == Manual.NOT_DOWNLOADED) {
+        if(!mManual.isDownloaded()) {
             if(!Utility.isNetworkAvailable(mContext)) {
                 showToast(mContext.getString(R.string.toast_network_unavailable));
                 mPlaceholderText.setText(R.string.pdf_placeholder_network_unavailable);
@@ -327,7 +349,8 @@ public class PDFFragment extends Fragment {
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
                 mCurrentPageNumber = position;
-                ManualUtility.setPageNumber(mContext, mManual.getId(), mCurrentPageNumber);
+                updatePageNumber(mCurrentPageNumber);
+//                ManualUtility.setPageNumber(mContext, mManual.getId(), mCurrentPageNumber);
             }
         });
 
@@ -342,5 +365,23 @@ public class PDFFragment extends Fragment {
         }
         mToast = Toast.makeText(mContext, message, Toast.LENGTH_LONG);
         mToast.show();
+    }
+
+    private void updateDownloaded(final boolean downloaded) {
+        mRealm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                mManual.setDownloaded(downloaded);
+            }
+        });
+    }
+
+    private void updatePageNumber(final int pageNumber) {
+        mRealm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                mManual.setLastPage(pageNumber);
+            }
+        });
     }
 }
