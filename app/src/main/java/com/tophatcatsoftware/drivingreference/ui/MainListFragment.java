@@ -15,17 +15,11 @@ import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.tophatcatsoftware.drivingreference.R;
 import com.tophatcatsoftware.drivingreference.adapters.MainListAdapter;
 import com.tophatcatsoftware.drivingreference.data.DrivingContract;
@@ -39,6 +33,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.realm.Realm;
+import io.realm.RealmQuery;
+import io.realm.RealmResults;
 
 /**
  * Copyright (C) 2016 Joey Turczak
@@ -64,36 +60,36 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
 
 //    private Context mContext;
 
-    private DatabaseReference mRef;
+//    private DatabaseReference mRef;
 
     private Realm mRealm;
 
-    private ChildEventListener mManualListener = new ChildEventListener() {
-        @Override
-        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-
-        }
-
-        @Override
-        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-        }
-
-        @Override
-        public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-        }
-
-        @Override
-        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-        }
-
-        @Override
-        public void onCancelled(DatabaseError databaseError) {
-
-        }
-    };
+//    private ChildEventListener mManualListener = new ChildEventListener() {
+//        @Override
+//        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+//
+//        }
+//
+//        @Override
+//        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+//
+//        }
+//
+//        @Override
+//        public void onChildRemoved(DataSnapshot dataSnapshot) {
+//
+//        }
+//
+//        @Override
+//        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+//
+//        }
+//
+//        @Override
+//        public void onCancelled(DatabaseError databaseError) {
+//
+//        }
+//    };
 
     public MainListFragment() {
         // Required empty public constructor
@@ -125,7 +121,7 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
         }
 
         updateWidget();
-        updateFirebaseRef();
+//        updateFirebaseRef();
     }
 
     @Override
@@ -143,7 +139,7 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
         sp.registerOnSharedPreferenceChangeListener(this);
         mRealm = Realm.getDefaultInstance();
 
-        updateFirebaseRef();
+//        updateFirebaseRef();
 
 //        mManualsCursor = null;
 //        mTestsCursor = null;
@@ -355,17 +351,31 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
             mData.add(testsForReview);
         }
 
-        // Add manuals
-        if(mManuals.size() > 0) {
-            Log.d("Manual", "Add");
+        RealmQuery<RealmManual> realmQuery = mRealm.where(RealmManual.class);
+        realmQuery.equalTo("location", LocationUtility.getLocationConfig(getContext()));
+        RealmResults<RealmManual> results = realmQuery.findAll();
+
+        if(results.size() > 0) {
             mViewTypes.add(MainListAdapter.VIEW_TYPE_TITLE);
             mData.add(getString(R.string.title_driving_manuals));
-            for(RealmManual manual : mManuals) {
-                Log.d("Manual", "Add2");
+            for(RealmManual manual : results) {
                 mViewTypes.add(MainListAdapter.VIEW_TYPE_MANUAL);
                 mData.add(manual);
             }
         }
+
+
+//        // Add manuals
+//        if(mManuals.size() > 0) {
+//            Log.d("Manual", "Add");
+//            mViewTypes.add(MainListAdapter.VIEW_TYPE_TITLE);
+//            mData.add(getString(R.string.title_driving_manuals));
+//            for(RealmManual manual : mManuals) {
+//                Log.d("Manual", "Add2");
+//                mViewTypes.add(MainListAdapter.VIEW_TYPE_MANUAL);
+//                mData.add(manual);
+//            }
+//        }
 //        if(mManualsCursor != null && mManualsCursor.moveToFirst()) {
 //            mViewTypes.add(MainListAdapter.VIEW_TYPE_TITLE);
 //            mData.add(getString(R.string.title_driving_manuals));
@@ -421,42 +431,42 @@ public class MainListFragment extends Fragment implements LoaderManager.LoaderCa
         context.sendBroadcast(dataUpdatedIntent);
     }
 
-    private void updateFirebaseRef() {
-        String location = LocationUtility.getLocationConfig(getContext());
-        String language = "English";
-        mRef = FirebaseDatabase.getInstance().getReference().child("manuals").child(location)
-                .child(language);
-        Log.d("update", location);
-
-        mManuals = new ArrayList<>();
-
-        mRef.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                mManuals.add(dataSnapshot.getValue(RealmManual.class));
-                Log.d("Add", "add");
-                fillDataArrays();
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-    }
+//    private void updateFirebaseRef() {
+//        String location = LocationUtility.getLocationConfig(getContext());
+//        String language = "English";
+//        mRef = FirebaseDatabase.getInstance().getReference().child("manuals").child(location)
+//                .child(language);
+//        Log.d("update", location);
+//
+//        mManuals = new ArrayList<>();
+//
+//        mRef.addChildEventListener(new ChildEventListener() {
+//            @Override
+//            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+//                mManuals.add(dataSnapshot.getValue(RealmManual.class));
+//                Log.d("Add", "add");
+//                fillDataArrays();
+//            }
+//
+//            @Override
+//            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+//
+//            }
+//
+//            @Override
+//            public void onChildRemoved(DataSnapshot dataSnapshot) {
+//
+//            }
+//
+//            @Override
+//            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
+//    }
 }

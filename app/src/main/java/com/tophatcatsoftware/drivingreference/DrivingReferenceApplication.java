@@ -24,7 +24,8 @@ public class DrivingReferenceApplication extends Application {
         addQuestionsToDb();
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
 
-        RealmConfiguration config = new RealmConfiguration.Builder(this).name("driving-reference.realm").build();
+        RealmConfiguration config = new RealmConfiguration.Builder(this).name("driving-reference.realm")
+                .build();
         Realm.setDefaultConfiguration(config);
     }
 

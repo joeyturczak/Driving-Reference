@@ -3,6 +3,7 @@ package com.tophatcatsoftware.drivingreference.ui;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,6 +61,7 @@ public class WelcomeFragment extends Fragment implements View.OnClickListener {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String location = parent.getItemAtPosition(position).toString().replace(" ", "_");
                 LocationUtility.setLocationConfig(parent.getContext(), location);
+                Log.d("Selected", "Selected");
 //                locationSpinner.requestFocus();
             }
 

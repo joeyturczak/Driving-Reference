@@ -31,10 +31,16 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.tophatcatsoftware.drivingreference.R;
 import com.tophatcatsoftware.drivingreference.adapters.LocationSpinnerAdapter;
 import com.tophatcatsoftware.drivingreference.adapters.MainListAdapter;
 import com.tophatcatsoftware.drivingreference.models.Manual;
+import com.tophatcatsoftware.drivingreference.models.RealmManual;
 import com.tophatcatsoftware.drivingreference.models.Test;
 import com.tophatcatsoftware.drivingreference.utils.LocationUtility;
 import com.tophatcatsoftware.drivingreference.utils.TestUtility;
@@ -44,12 +50,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import io.realm.Realm;
+import io.realm.RealmQuery;
+import io.realm.RealmResults;
+
 /**
  * Copyright (C) 2016 Joey Turczak
  */
 public class MainActivity extends AppCompatActivity implements FragmentManager.OnBackStackChangedListener,
         MainListFragment.OnItemSelectedListener, TestFragment.OnTestCompleteListener,
-        ReviewFragment.OnTestSelectedListener, WelcomeFragment.OnWelcomeCompleted, FirebaseAuth.AuthStateListener {
+        ReviewFragment.OnTestSelectedListener, WelcomeFragment.OnWelcomeCompleted, FirebaseAuth.AuthStateListener,
+        SharedPreferences.OnSharedPreferenceChangeListener {
 
     private static final String MENU_FRAGMENT_TAG = "MF";
     private static final String PDF_FRAGMENT_TAG = "PF";
@@ -88,6 +99,38 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
     private boolean mBackPressed = false;
 
     private FirebaseAuth mFirebaseAuth;
+    private DatabaseReference mRef;
+
+    private Realm mRealm;
+
+    private ChildEventListener mManualListener = new ChildEventListener() {
+        @Override
+        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+            RealmManual manual = dataSnapshot.getValue(RealmManual.class);
+            manual.setId(dataSnapshot.getKey());
+            addToRealm(manual);
+        }
+
+        @Override
+        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+        }
+
+        @Override
+        public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+        }
+
+        @Override
+        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+        }
+
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
+
+        }
+    };
 
     @Override
     protected void onStart() {
@@ -105,11 +148,15 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
     protected void onResume() {
         super.onResume();
         updateAppBar();
+        setupFirebase();
+        mRealm = Realm.getDefaultInstance();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        removeFirebaseListener();
+        mRealm.close();
     }
 
     @Override
@@ -156,18 +203,25 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
 
         getSupportFragmentManager().addOnBackStackChangedListener(this);
 
+        mLocationSpinner = (Spinner) findViewById(R.id.location_spinner);
+
         displayUpButton();
 
-        initializeSpinner();
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("welcome", false);
+        editor.apply();
 
-        initializeAppBar();
-
-        mAdView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder()
-                .build();
-        mAdView.loadAd(adRequest);
-
-        initInterstitial();
+//        initializeSpinner();
+//
+//        initializeAppBar();
+//
+//        mAdView = (AdView) findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder()
+//                .build();
+//        mAdView.loadAd(adRequest);
+//
+//        initInterstitial();
 
         if(savedInstanceState == null) {
             loadContent();
@@ -494,6 +548,17 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         boolean welcome = sharedPreferences.getBoolean("welcome", false);
         if(welcome) {
+            initializeSpinner();
+
+            initializeAppBar();
+
+            mAdView = (AdView) findViewById(R.id.adView);
+            AdRequest adRequest = new AdRequest.Builder()
+                    .build();
+            mAdView.loadAd(adRequest);
+
+            initInterstitial();
+
             addFragments();
         } else {
             startWelcomeFragment();
@@ -678,15 +743,59 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
     public void onWelcomeCompleted() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putBoolean("welcome", false);
+        editor.putBoolean("welcome", true);
         editor.apply();
 
+//        removeFirebaseListener();
+//        setupFirebase();
+
         getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-        addFragments();
+//        addFragments();
+        loadContent();
     }
 
     @Override
     public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
 
+    }
+
+    private void addToRealm(final RealmManual manual) {
+        RealmQuery<RealmManual> query = mRealm.where(RealmManual.class);
+        query.equalTo("id", manual.getId());
+
+        RealmResults<RealmManual> results = query.findAll();
+        if(results.size() > 0) {
+            // EXISTS
+        } else {
+            // ADD TO REALM
+            mRealm.executeTransactionAsync(new Realm.Transaction() {
+                @Override
+                public void execute(Realm realm) {
+                    manual.setDownloaded(false);
+                    manual.setLastPage(0);
+                    realm.copyToRealm(manual);
+                }
+            });
+        }
+    }
+
+    private void setupFirebase() {
+//        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String location = LocationUtility.getLocationConfig(this);
+        String language = "English";
+        mRef = FirebaseDatabase.getInstance().getReference().child("manuals").child(location).child(language);
+        mRef.addChildEventListener(mManualListener);
+    }
+
+    private void removeFirebaseListener() {
+        mRef.removeEventListener(mManualListener);
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        if(key.equals(getString(R.string.shared_preference_location_key))) {
+            removeFirebaseListener();
+            setupFirebase();
+        }
     }
 }
